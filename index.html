@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traffic Light Simulator</title>
+    <style>
+        body {
+            background: gray;
+            text-align: center;
+            font-family: monospace;
+            margin-right: 600px;
+            margin-left: 600px;
+            margin-top: 50px;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        h1{
+            font-family: monospace;
+            color: white;
+            margin-bottom: 70px;
+        }
+        button{
+            background: black;
+            color: white;
+            height: 30px;
+        }
+        .traffic-signal {
+            margin-top: 100px;
+            background-color: black;
+            display: flex;
+            width: 100px;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: solid;
+            margin: 0 auto;
+        }
+
+        .light {
+            width: 90px;
+            height: 90px;
+            border-radius: 49%;
+            margin: 8px;
+        }
+        .red {
+            background-color: red;
+        }
+        .yellow {
+            background-color: yellow;
+        }
+
+        .green {
+            background-color: green;
+        }
+        .stand {
+           background-color: black;
+           height: 200px;
+           width: 15px;
+           display: flex;
+           flex-direction: column;
+           text-align: center;
+           margin: 0 auto; 
+        }
+    </style>
+</head>
+<body>
+    <h1>TRAFFIC LIGHT SIMULATOR</h1>
+    <div class="traffic-signal">
+        <div class="light red" id="red"></div>
+        <div class="light yellow" id="yellow"></div>
+        <div class="light green" id="green"></div>
+    </div>
+    <div class="stand"></div>
+    <button onclick="changeLight()">CHANGE LIGHT</button>
+    <script>
+        let currentLight = 'red';
+
+        document.getElementById('red').style.backgroundColor = 'red';
+
+        function changeLight() {
+            const redLight = document.getElementById('red');
+            const yellowLight = document.getElementById('yellow');
+            const greenLight = document.getElementById('green');
+
+            switch (currentLight) {
+                case 'red':
+                    redLight.style.backgroundColor = '#DCDCDC';
+                    yellowLight.style.backgroundColor = 'yellow';
+                    currentLight = 'yellow';
+                    break;
+                case 'yellow':
+                    yellowLight.style.backgroundColor = '#DCDCDC';
+                    greenLight.style.backgroundColor = 'green';
+                    currentLight = 'green';
+                    break;
+                case 'green':
+                    greenLight.style.backgroundColor = '#DCDCDC';
+                    redLight.style.backgroundColor = 'red';
+                    currentLight = 'red';
+                    break;
+                default:
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>
