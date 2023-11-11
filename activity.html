@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <html>
+    <head>
+	<title>JAVASCRIPT ACTIVITY</title>
+    <style>
+        body {
+        background: #48D1CC;
+        font-family:Footlight MT Light;
+        text-align: center;
+    }
+</style>
+    <body>
+        <h1>Simple Interest Calculator</h1>
+        <label>Amount:</label><br>
+        <input type= "text" id="p" required><br><br>
+        <label>Number of Years:</label><br>
+        <input type= "text" id="n" required><br><br>
+        <label>Rate:</label><br>
+        <input type= "text" id="r" required><br><br>
+
+        <button onclick="calculate()">Calculate</button>
+
+        <p id="result"></p>
+    </body>
+        <script>
+            function calculate()
+            {
+                p = document.getElementById("p").value;
+                n = document.getElementById("n").value;
+                r = document.getElementById("r").value;
+                result = document.getElementById("result");
+                
+                result.innerHTML = "The interest is " + (p*n*r/100);
+            }
+        </script>
+    </head>
+</html>
